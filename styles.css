@@ -1,0 +1,355 @@
+html {
+  font-size: 16px;
+}
+body {
+  /* animation: animated-bg 50s infinite; */
+  transition: background 6s ease-in;
+  margin-top: 100px;
+  padding-bottom: 100px;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle,rgb(232, 151, 235) 0%, rgb(255, 250, 184) 100%);
+  /* padding-bottom: 200px; */
+  color: #000;
+  font-family: 'Ubuntu', Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.4;
+  h1, h2 {
+    background: radial-gradient(circle,rgb(61, 5, 63) 0%, rgb(0, 0, 0) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; 
+  }
+  a {
+    background-color: #e3e98f;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: none;
+    padding: 0 3px;
+    border-radius: 5px;
+  }
+  h1 {
+    margin-top: 100px;
+    font-size: 2.8em;
+  }
+  h2 {
+    margin-top: 80px;
+    font-size: 2em;
+  }
+  h1, h2, h3, p, ul {
+    @media (min-width: 1024px) {
+      padding-left: 90px;
+      padding-right: 90px;
+      max-width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    vertical-align: middle;
+
+  }
+
+  h2 {
+    text-align: center;
+  }
+ 
+  p {
+    font-size: 20;
+  }
+  @font-face {
+    font-family: 'Ubuntu Sans';
+    src: url('../fonts/UbuntuSans.tiff') format('tiff');
+    font-weight: 300 800;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  
+  @font-face {
+    font-family: 'Ubuntu Sans';
+    src: url('../fonts/UbuntuSans-Italic.tiff') format('tiff');
+    font-weight: 300 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  ul.menu {
+    position: relative;
+    z-index: 5;
+    margin: 100px auto 0;
+    padding: 0 0 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: sticky;
+    bottom: 0;
+    text-wrap: nowrap;
+  }
+  ul.menu li {
+    list-style: none;
+  }
+
+  ul.menu a {
+    padding: 0.6rem;
+    text-decoration: none;
+    border-radius: 0;
+    font-size: 1.2rem;
+  }
+
+  a:hover,
+  ul.menu a.active {
+    background-color: #effa91;
+    color: #000000;
+    text-shadow: none;
+  }
+}
+/* 
+.container {
+  scroll-snap-type: y mandatory;
+} */
+
+.profile-photo {
+  display: flex;
+  justify-content: center;
+  border-radius: 100px;
+  width: 200px;
+  animation: animated-filters 60s infinite;
+  margin: 0 auto;
+}
+
+.profile-link, .profile-link:hover {
+  background-color: transparent;
+}
+
+.profile-photo::after {
+  background: hotpink;
+  mix-blend-mode: multiply;
+}
+
+.profile-photo::before {
+  background: navy;
+  mix-blend-mode: lighten;
+}
+
+@keyframes animated-filters {
+  10% {
+    filter: drop-shadow(2px 8px 10px #333) blur(2px);
+    transform: translateY(6vh);
+    background: radial-gradient(at 34% 99%, #f4f4f4 0px, transparent 50%), radial-gradient(at 50% 91%, #8ec6c5 0px, transparent 50%), radial-gradient(at 19% 33%, #6983aa 0px, transparent 50%), radial-gradient(at 16.864224137931032% 55.625%, #8566aa 0px, transparent 50%), #f4f4f4;
+
+  }
+  25% {
+    transform: translateY(4vh);
+    transform: translateX(3vw);
+  }
+  60% {
+    transform: translateY(3vh);
+    filter: drop-shadow(3px 3px 6px #333) blur(1px);
+  }
+  80% {
+    filter: drop-shadow(3px 3px 6px #333);
+    transform: translateX(6vw);
+    transform: translateY(5vh);
+  }
+}
+
+@keyframes animated-bg {
+  0% {
+    background: radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgb(226, 223, 184) 100%);
+  }
+  30% {
+    background: radial-gradient(circle,rgb(245, 232, 160) 0%, rgb(248, 192, 234) 100%);
+  }
+  45% {
+    background: radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgb(233, 212, 144) 100%);
+  }
+  80% {
+    background: radial-gradient(circle,rgb(228, 196, 14) 0%, rgb(248, 192, 234) 100%);
+  }
+}
+@keyframes animated-text {
+  0% {
+    filter: drop-shadow(1px 2px 3px #333) blur(1px);
+    opacity: 0.9;
+  }
+  10% {
+    filter: drop-shadow(0px 0px -px #333);
+
+  }
+  25% {
+    opacity: 1;
+  }
+  60% {
+  }
+  80% {
+  }
+}
+.services svg.svg-inline {
+  max-width: 40px;
+  display: inline-block;
+  position: absolute;
+  margin-top: 20px;
+}
+svg.svg-inline {
+  max-width: 40px;
+  position: absolute;
+}
+div {
+  position: relative;
+}
+.services {
+  max-width: 80%;
+  margin: 60px auto;
+  @media (min-width: 1024px) {
+    display: flex;
+  }
+  flex-direction: row;
+  gap: 30px;
+  justify-content: space-between;
+  padding: 0 0 30rem;
+}
+.services > div {
+  position: relative;
+  flex: 1 1 33%;
+}
+.services h3 {
+  font-size: 1.8em;
+  margin: 15px 0;
+}
+.services h3,
+.services p {
+  padding-left: 60px;
+}
+.approach-services {
+  max-width: 90%;
+  margin: 60px auto;
+  @media (min-width: 1024px) {
+    display: flex;
+  }
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: space-between;
+  padding: 0 0 30rem;
+}
+.approach-services > div {
+  position: relative;
+  flex: 1 31%;
+  padding-bottom: 2rem;
+}
+.approach-services h3 {
+  font-size: 1.8em;
+  margin: 15px 0;
+}
+.approach-services div h2,
+.approach-services div h3,
+.approach-services div p {
+  padding-left: 70px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 0;
+  max-width: none;
+}
+
+.resume-section {
+  background-color: transparent;
+}
+
+.midnight {
+  background-color: black;
+  color: #f5baf0;
+  background: radial-gradient(circle,rgb(61, 5, 63) 0%, rgb(0, 0, 0) 100%);
+  filter: drop-shadow(2px 3px 5px #333);
+}
+
+.midnight h2,
+.midnight h3 {
+  text-align: left;
+  background: radial-gradient(circle,rgb(232, 151, 235) 0%, rgb(255, 250, 184) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.midnight h2,
+.midnight h3,
+.midnight p {
+  margin-left: 4rem;
+  max-width: 85%;
+  @media (min-width: 1024px) {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.midnight h2 {
+  @media (min-width: 1024px) {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+  font-size: 3.5rem;
+  margin-top: 1rem;
+}
+.midnight h3 {
+  font-size: 2.3rem;
+}
+.midnight svg.svg-inline {
+    background: radial-gradient(circle,rgb(232, 151, 235) 0%, rgb(255, 250, 184) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  @media (min-width: 1024px) {
+    max-width: 60px;
+  }
+}
+section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  @media (min-width: 1024px) {
+    font-size: 2.8rem;
+  }
+}
+section {
+  padding: 6rem 2.2rem;
+  margin: 0 auto;
+  @media (min-width: 1024px) {
+    padding: 6rem 10rem 6rem;
+  }
+}
+section p {
+  font-size: 1.4rem;
+
+}
+.sailBoatContainer {
+  position: absolute;
+  width: 250px;
+  animation: move 20s linear infinite;
+}
+
+@keyframes move
+{
+    from {
+      transform: translateY(1vh);
+      left: 0;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+details summary {
+  position: fixed;
+  z-index: 20;
+  bottom: 20px;
+}
+.free-palestine {
+  width: 100%;
+  height: 100%;
+  animation: animated-bg 50s infinite;
+  transition: background 6s ease-in;
+  background: radial-gradient(circle,rgb(232, 151, 235) 0%, rgb(255, 250, 184) 100%);
+  position: fixed;
+  z-index: 10;
+  top: 0;
+
+}
